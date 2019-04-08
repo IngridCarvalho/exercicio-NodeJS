@@ -1,0 +1,32 @@
+<%- contentFor('body') %>
+	<form class="form" action="/novo-contato" method="POST">
+		<div class="form-group">
+			<label>Nome do Contato:</label>
+			<input type="text" name="nome" class="form-control">
+		</div>
+		<div class="form-group">
+			<label>Telefone:</label>
+			<input type="number" name="telefone" class="form-control">
+		</div>
+		<div class="form-group">
+			<label>E-mail:</label>
+			<input type="text" name="email" class="form-control">
+		</div>
+		<div class="form-group">
+			<label>Endereço de Instalação:</label>
+			<input type="text" name="endInst" class="form-control">
+		</div>
+		<div class="form-group">
+			<label>Endereço de Cobrança:</label>
+			<input type="text" name="endCob" class="form-control">
+		</div>
+		<div class="form-group">
+			<label>Velocidade Instalada:</label>
+			<input type="text" name="velocidade" class="form-control">
+		</div>
+		<div class="form-group">
+			<label>Valor do Plano Mensal:</label>
+			<input type="number" name="valor" class="form-control">
+		</div>
+		<button class="btn btn-success" type="submit">Salvar</button>
+	</form>

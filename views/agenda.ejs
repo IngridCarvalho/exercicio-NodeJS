@@ -4,21 +4,33 @@
 		<table class="table table-striped">
 			<thead>
 				<tr>
+					<th>ID</th>
 					<th>Nome</th>
 					<th>Telefone</th>
+					<th>Email</th>
+					<th>End. Instalação</th>
+					<th>End. Cobrança</th>
+					<th>Velocidade</th>
+					<th>Valor</th>
+					<th colspan="2" class="text-center">Opções</th>
 				</tr>
 			</thead>
 			<tbody>
-				<% contacts.forEach(contato => {
-					console.log(contato.nome)%>
+				<% contacts.forEach(contato => {%>
 					<tr>
-						<td><% contato.nome %></td>
-						<td><% contato.telefone %></td>
+						<td><%= contato.id %></td>
+						<td><%= contato.nome %></td>
+						<td><%= contato.telefone %></td>
+						<td><%= contato.email %></td>
+						<td><%= contato.endInst %></td>
+						<td><%= contato.endCob %></td>
+						<td><%= contato.velocidade %></td>
+						<td><%= contato.valor %></td>
+						<td class="text-center"><a href="/contatos/editar/contato.id"><button class="btn btn-warning">Editar</button></a></td>
+						<td class="text-center"><a href=""><button class="btn btn-danger">Excluir</button></a></td>
 					</tr>
 				<% }); %>
 			</tbody>
 		</table>
 
-	<p>Selecione a opção desejada:</p>
-
-	<a href="/contatos/"><button class="btn btn-primary">Incluir</button></a>
+	<a href="/contatos/"><button class="btn btn-primary">Novo Contato</button></a>

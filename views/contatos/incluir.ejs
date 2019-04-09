@@ -1,5 +1,11 @@
 <%- contentFor('body') %>
-	<form class="form" action="/novo-contato" method="POST">
+	<form class="form" action="<%= contacts == null ? "/novo-contato" : "/contatos/editar/:id" %>" method="POST">
+
+	<% if (contacts != null){
+			contacts.map(contato, id) => {
+
+			}
+		}%>
 		<div class="form-group">
 			<label>Nome do Contato:</label>
 			<input type="text" name="nome" class="form-control">

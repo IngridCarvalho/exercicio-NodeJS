@@ -18,10 +18,13 @@ app.get('/',function(req,res){
 });
 
 app.get('/contatos', function(req, res){
-	res.render("contatos/incluir");
+	res.render("contatos/incluir",
+			{contacts: null}
+		);
 });
 
 app.post('/novo-contato', function(req, res){
+	let id1 = contatos.length + 1;
 	let nome1 = req.body.nome;
 	let telefone1 = req.body.telefone;
 	let email1 = req.body.email;
@@ -30,11 +33,18 @@ app.post('/novo-contato', function(req, res){
 	let velocidade1 = req.body.velocidade;
 	let valor1 = req.body.valor;
 
-	let pessoa = {nome: nome1, telefone: telefone1, email: email1, endInst: endInst1, endCob: endCob1, velocidade: velocidade1, valor: valor1};
+	let pessoa = {id: id1, nome: nome1, telefone: telefone1, email: email1, endInst: endInst1, endCob: endCob1, velocidade: velocidade1, valor: valor1};
 
-	console.log(`Adicionou: ${pessoa.nome}`);
+	console.log(`Adicionou: ${pessoa.nome}`); //adicionar isso em um arquivo
 	contatos.push(pessoa);
 	res.redirect('/');
+});
+
+app.get('/contatos/editar/:id', function(req, res){
+	id = req.params.id;
+	res.render("contatos/incluir",
+			{contacts: contatos, id: id}
+		);
 });
 
 app.use(express.static(__dirname + '/public'))

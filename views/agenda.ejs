@@ -26,7 +26,7 @@
 						<td><%= contato.endCob %></td>
 						<td><%= contato.velocidade %></td>
 						<td><%= contato.valor %></td>
-						<td class="text-center"><a href="/contatos/editar/contato.id"><button class="btn btn-warning">Editar</button></a></td>
+						<td class="text-center"><a href="/contatos/editar/<%= contato.id %>"><button class="btn btn-warning">Editar</button></a></td>
 						<td class="text-center"><a href=""><button class="btn btn-danger">Excluir</button></a></td>
 					</tr>
 				<% }); %>

@@ -42,9 +42,20 @@ app.post('/novo-contato', function(req, res){
 
 app.get('/contatos/editar/:id', function(req, res){
 	id = req.params.id;
+	let contato = contatos.filter((contato) => {
+		return contato.id == id;
+	});
 	res.render("contatos/incluir",
-			{contacts: contatos, id: id}
+			{contacts: contato}
 		);
+});
+
+app.post('/contatos/editar', function(req, res){
+
+	let oldContact = contatos.find(contato => contato.id == req.body.id);
+	console.log(oldContact);
+
+	res.redirect('/');
 });
 
 app.use(express.static(__dirname + '/public'))
